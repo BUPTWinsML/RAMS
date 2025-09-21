@@ -17,7 +17,7 @@ Java_com_example_cppinvoke_NativeLib_getInferenceTime(JNIEnv* env, jobject /* th
 
 *   Modify `app/src/main/cpp/CMakeLists.txt`
 ```txt
-# First select your framework type. The code for the TFLM framework is located in the upper section
+# First select your framework type. The code for the RAMS framework is located in the upper section
 set(MODEL_ROOT "rams" CACHE STRING "Top-level model root under cpp")
 set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 ```
