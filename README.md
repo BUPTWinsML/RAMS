@@ -1,6 +1,13 @@
-# RAMS
+# RAMS Android Invoke APP Demo
 
 This is an open-sourced demo application that allows for easy testing of RAMS. Using the source code, you can build an APP with Android Studio that can perform inference using a neural network implemented in C++ and display the inference time. The inference framework of neural networks includes two types: RAMS and TFLM.
+
+RAMS can perform inference on the following devices:
+
+![device](assets/device.png)
+
+
+## To Install / Run profile
 
 The executable model implementation is located in `app/src/main/cpp`. Compile APKS to execute different model inference:
 
@@ -21,9 +28,5 @@ Java_com_example_cppinvoke_NativeLib_getInferenceTime(JNIEnv* env, jobject /* th
 set(MODEL_ROOT "rams" CACHE STRING "Top-level model root under cpp")
 set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 ```
-
-RAMS can perform inference on the following devices:
-
-![device](assets/device.png)
 
 All ten APKS are available in **[Download APK](apks_10)**
