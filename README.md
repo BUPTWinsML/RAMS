@@ -1,6 +1,6 @@
 # RAMS
 
-This is the source code for an APP built with Android Studio that can perform inference using a neural network implemented in C++ and display the inference time. The inference framework of neural networks includes two types: RAMS and TFLM.
+This is an open-sourced demo application that allows for easy testing of RAMS. Using the source code, you can build an APP with Android Studio that can perform inference using a neural network implemented in C++ and display the inference time. The inference framework of neural networks includes two types: RAMS and TFLM.
 
 The executable model implementation is located in `app/src/main/cpp`. Compile APKS to execute different model inference:
 
@@ -24,6 +24,6 @@ set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 
 RAMS can perform inference on the following devices:
 
-![device](assets/newdevice6.pdf)
+![device](assets/device.png)
 
 All ten APKS are available in **[Download APK](apks_10)**
