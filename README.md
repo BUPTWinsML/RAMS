@@ -9,6 +9,8 @@ RAMS can perform inference on the following devices:
 
 ## To Install / Run profile
 
+### test
+
 The executable model implementation is located in `app/src/main/cpp`. Compile APKS to execute different model inference:
 
 For example, to inference the model in `cpp/rams/img5`
