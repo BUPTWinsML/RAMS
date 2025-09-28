@@ -5,6 +5,7 @@ This is an open-sourced demo application that allows for easy testing of RAMS. U
 RAMS can perform inference on the following devices:
 
 ![device](assets/device.png)
+<img src="assets/device.png" height="220" alt="device">
 
 
 ## To Install / Run profile
