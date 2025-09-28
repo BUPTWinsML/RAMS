@@ -8,15 +8,48 @@ RAMS can perform inference on the following devices:
     <img src="assets/device.png" height="400" alt="device">
 </p>
 
-## To Install / Run profile
+## To Install / Run Demo
 
-### test
+### Quick start with APK
 
-The executable model implementation is located in `app/src/main/cpp`. Compile APKS to execute different model inference:
+All ten APKS are available in **[Download APK](apks_10)**
 
-For example, to inference the model in `cpp/rams/img5`
+1. Download the APK corresponding to the framework and neural network that you want to use
 
-*   Modify `app/src/main/cpp/nativelib.cpp`
+2. Use adb to connect to smartphones or mobile platforms (Android basic system)
+
+3. Install the APK
+   
+   ```bash
+   adb install -t '.\nnPerfAPKinstaller\rams_img5.apk'
+   ```
+
+### Build project
+
+The executable model implementation is located in `app/src/main/cpp`. Compile APKS to execute different model inference. For example, to inference the model in `cpp/rams/img5`:
+
+1. Install Android Studio (Recommand Android Studio Narwhal | 2025.1.1 Patch 1)
+
+2. Import project
+
+   File -> Open -> Current file directory
+
+3. Android Studio setting
+
+   ```bash
+   Android Gradle Plugin Version: 8.7.3
+
+   Gradle Version:                8.9
+
+   NDK Version:                   27.0.12077973
+
+   JDK Verison:                   21.0.7
+
+   Complile Sdk Version:          34
+   ```
+
+4. Modify `app/src/main/cpp/nativelib.cpp`
+
 ```C++
 #include "rams/img5/demo.h"
 Java_com_example_cppinvoke_NativeLib_getInferenceTime(JNIEnv* env, jobject /* this */) {
@@ -25,11 +58,14 @@ Java_com_example_cppinvoke_NativeLib_getInferenceTime(JNIEnv* env, jobject /* th
 }
 ```
 
-*   Modify `app/src/main/cpp/CMakeLists.txt`
+5. Modify `app/src/main/cpp/CMakeLists.txt`
+
 ```txt
 # First select your framework type. The code for the RAMS framework is located in the upper section
 set(MODEL_ROOT "rams" CACHE STRING "Top-level model root under cpp")
 set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 ```
 
-All ten APKS are available in **[Download APK](apks_10)**
+6. Build your APK
+
+   Build -> Generate App Bundles or APKs -> Generate APKs
