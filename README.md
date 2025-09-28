@@ -22,4 +22,7 @@ set(MODEL_ROOT "rams" CACHE STRING "Top-level model root under cpp")
 set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 ```
 
+RAMS can perform inference on the following devices:
+![device](assets/newdevice6.pdf)
+
 All ten APKS are available in **[Download APK](apks_10)**
