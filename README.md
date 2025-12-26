@@ -1,5 +1,10 @@
 # RAMS Android Invoke APP Demo
 
+*News* 🔥
+- [2025/12] We have extended RAMS to support attention-based (transformer) architecture models. The transformer model files and quick-start demo are now available at [here](#install-run-demo)
+
+## About
+
 This is an open-sourced demo application that allows for easy testing of RAMS. Using the source code, you can build an APP with Android Studio that can perform inference using a neural network implemented in C++ and display the inference time. The inference framework of neural networks includes two types: RAMS and TFLM.
 
 RAMS can perform inference on the following devices:
@@ -69,3 +74,25 @@ set(MODEL_NAME "img5" CACHE STRING "Model folder inside MODEL_ROOT")
 6. Build your APK
 
    Build -> Generate App Bundles or APKs -> Generate APKs
+
+<a id="install-run-demo"></a>
+## Add Support for Attention-based (transformer) Architecture Models
+
+### Start with compiled executable files
+
+Under path `attention-based_models/`, we provide transformer architecture models. These models can be executed on both Linux and Android system. And the models list as follow:
+
+- Openai/clip-vit-large-patch14-336
+- Facebook/deit-base-patch16-224
+- Facebook/dinov3-vitl16-pretrain-lvd1689m
+
+To quickly start, we have already built **pre-compiled executables** for the models listed above. To run them on an **IoT device**, you can:
+
+```bash
+adb push attention-based_models/rams/android/rams_clip /data/local/tmp/
+adb shell "chmod 755 /data/local/tmp/rams_clip"
+adb push /path/to/libc++_shared.so /data/local/tmp/
+adb shell 'cd /data/local/tmp && LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH ./rams_clip'
+```
+
+The required shared library (libc++_shared.so) is included in this repo under `lib/`
